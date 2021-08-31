@@ -7,12 +7,12 @@ using ContactManager.Models;
 
 namespace ContactManager.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+  public class ApplicationDbContext : IdentityDbContext
+  {
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
-        public DbSet<ContactManager.Models.Contact> Contact { get; set; }
     }
+    public DbSet<Contact> Contact { get; set; }
+  }
 }
